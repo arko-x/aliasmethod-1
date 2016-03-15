@@ -1,6 +1,0 @@
-*.txt
-*.o
-aliastable
-*.pyc
-*log
-Makefile
