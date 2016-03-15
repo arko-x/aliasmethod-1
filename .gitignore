@@ -1,0 +1,9 @@
+*.txt
+*.o
+aliastable
+*.pyc
+*log
+Makefile
+.idea/*
+CMakeCache.txt
+cmake_install.cmake
