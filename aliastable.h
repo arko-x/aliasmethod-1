@@ -25,7 +25,7 @@ class AliasTable {
 public:
     AliasTable(int64_t nums_a, double* weights_a);
     ~AliasTable();
-    int64_t sampling(double rand1=0, double rand2=0, int64_t seed);
+    int64_t sampling(double rand1=0, double rand2=0, int64_t seed=131);
     
     int64_t nums;
     std::unique_ptr<double[]> weights;
