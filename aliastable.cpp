@@ -17,16 +17,6 @@ AliasTable::AliasTable(int64_t nums_a, double* weights_a)
     initialize();
 //    mt(rd());
 
-    // 乱数生成器の初期化
-//    const gsl_rng_type* gsl_T = gsl_rng_rand48;
-//    gsl_r = gsl_rng_alloc(gsl_T);
-//    gsl_rng_env_setup();
-//    gsl_rng_set(gsl_r, 314159265);
-//    std::random_device rd;
-//    rd();
-//    mt(rd());
-//    gsl_rng_set(gsl_r, rd());
-
 }
 
 AliasTable::~AliasTable() {}
@@ -87,7 +77,7 @@ void AliasTable::initialize() {
 int64_t AliasTable::sampling(double rand1, double rand2, int64_t seed) {
     if (rand1 == 0 && rand2 == 0) {
         std::random_device rd;
-        std::mt19937 mt(rd());
+        std::mt19937 mt(rd()+seed);
 //        std::mt19937 mt;
         std::uniform_real_distribution<double> r_uni(0, 1.0);
 
