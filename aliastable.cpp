@@ -1,6 +1,4 @@
 #include "aliastable.h"
-#include <iostream>
-#include <random>
 //#include <gsl/gsl_rng.h>
 
 //std::random_device  AliasTable::rd;
@@ -86,7 +84,7 @@ void AliasTable::initialize() {
         probs[small_block[--num_small_block]] = 1;
 }
 
-int64_t AliasTable::sampling(double rand1, double rand2) {
+int64_t AliasTable::sampling(double rand1, double rand2, int64_t seed) {
     if (rand1 == 0 && rand2 == 0) {
         std::random_device rd;
         std::mt19937 mt(rd());

@@ -13,18 +13,19 @@ author: m-ochi
 #ifndef INCLUDED_aliastable_h_
 #define INCLUDED_aliastable_h_
 
-//#include <gsl/gsl_rng.h>
 #include <iostream>
 #include <random>
 #include <memory>
 #include <cstdint>
+#include <iostream>
+#include <random>
 
 class AliasTable {
 
 public:
     AliasTable(int64_t nums_a, double* weights_a);
     ~AliasTable();
-    int64_t sampling(double rand1=0, double rand2=0);
+    int64_t sampling(double rand1=0, double rand2=0, int64_t seed);
     
     int64_t nums;
     std::unique_ptr<double[]> weights;
@@ -33,16 +34,6 @@ public:
 
 private:
     void initialize();
-//    double* norm_probs;
-//    gsl_rng* gsl_r;
-//    std::uniform_real_distribution<double> r_uni(0.0,1.0);
-//    std::random_device rd;
-//    std::mt19937 mt(std::random_device t_rd);
-//    std::uniform_real_distribution<double> r_uni();
-
-//    static std::random_device rd;
-//    static std::mt19937 mt;
-//    static std::uniform_real_distribution r_uni<double>;
 
 };
 
